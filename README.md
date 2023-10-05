@@ -4,7 +4,7 @@
 
 ### Getting Started
 
-Do work with Angular please install first the Angular CLI globally:
+To work with Angular please install first the Angular CLI globally:
 
 ```bash
 npm install -g @angular/cli
