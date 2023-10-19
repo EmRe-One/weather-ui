@@ -8,6 +8,7 @@ import {MaterialModule} from "./MaterialModule";
 import {ToolbarComponent} from './components/toolbar/toolbar.component';
 import {WeatherCardComponent} from './components/weather-card/weather-card.component';
 import {NgOptimizedImage} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {NgOptimizedImage} from "@angular/common";
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,

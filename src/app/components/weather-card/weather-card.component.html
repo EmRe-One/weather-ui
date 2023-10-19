@@ -1,52 +1,55 @@
-<mat-card class="p-4 !rounded-3xl">
-  <mat-card-header class="flex justify-center">
-    <mat-card-title class="text-center">
-      <span class="font-bold text-4xl">{{ weatherData.name!! }}</span>
-    </mat-card-title>
-    <mat-card-subtitle>
-      <span class="text-gray-600">{{ getCurrentDay() }} - {{ getCurrentTime() }}</span>
-    </mat-card-subtitle>
-  </mat-card-header>
-  <div matCardImage class="flex justify-center">
-    <img class="w-[250px] h-[250px] aspect-square object-contain"
-         src="https://openweathermap.org/img/wn/{{ getWeatherIcon() }}@4x.png" alt="cloudy">
-  </div>
+<mat-progress-spinner *ngIf="isLoading; else weatherCardTemplate"></mat-progress-spinner>
 
-  <mat-card-content>
-    <div class="flex flex-col justify-start items-center">
-      <span class="text-4xl text-bold">{{ weatherData.main!!.temp }}°C</span>
-      <span class="italic">{{ getDescription() }}</span>
+<ng-template #weatherCardTemplate>
+  <mat-card class="p-4 !rounded-3xl">
+    <mat-card-header class="flex justify-center">
+      <mat-card-title class="text-center">
+        <span class="font-bold text-4xl">{{ weatherData?.name }}</span>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <span class="text-gray-600">{{ getCurrentDay() }} - {{ getCurrentTime() }}</span>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <div matCardImage class="flex justify-center">
+      <img class="w-[250px] h-[250px] aspect-square object-contain"
+           src="https://openweathermap.org/img/wn/{{ getWeatherIcon() }}@4x.png" alt="cloudy">
+    </div>
+    <mat-card-content>
+      <div class="flex flex-col justify-start items-center">
+        <span class="text-4xl text-bold">{{ weatherData?.main?.temp }}°C</span>
+        <span class="italic">{{ getDescription() }}</span>
 
-      <hr class="h-5 w-[100px] dark my-2" />
+        <hr class="h-5 w-[100px] dark my-2" />
 
-      <div class="grid grid-cols-3 w-full mb-10">
-        <div class="flex justify-center items-center p-5"><mat-icon>sunny</mat-icon></div>
-        <div class="flex justify-center items-center p-5"><mat-icon>air</mat-icon></div>
-        <div class="flex justify-center items-center p-5"><mat-icon>water_drop</mat-icon></div>
+        <div class="grid grid-cols-3 w-full mb-10">
+          <div class="flex justify-center items-center p-5"><mat-icon>sunny</mat-icon></div>
+          <div class="flex justify-center items-center p-5"><mat-icon>air</mat-icon></div>
+          <div class="flex justify-center items-center p-5"><mat-icon>water_drop</mat-icon></div>
 
-        <div class="flex justify-center items-center px-1 border-r-2 border-gray-300">
-          <span class="text-xs text-gray-400">Sunrise</span>
-        </div>
-        <div class="flex justify-center items-center px-1 border-r-2 border-gray-300">
-          <span class="text-xs text-gray-400">Wind</span>
-        </div>
-        <div class="flex justify-center items-center px-1">
-          <span class="text-xs text-gray-400">Humidity</span>
-        </div>
+          <div class="flex justify-center items-center px-1 border-r-2 border-gray-300">
+            <span class="text-xs text-gray-400">Sunrise</span>
+          </div>
+          <div class="flex justify-center items-center px-1 border-r-2 border-gray-300">
+            <span class="text-xs text-gray-400">Wind</span>
+          </div>
+          <div class="flex justify-center items-center px-1">
+            <span class="text-xs text-gray-400">Humidity</span>
+          </div>
 
-        <div class="flex justify-center items-center px-1 border-r-2 border-gray-300">
-          <span class="text-gray-400">{{ getSunriseTime() }}</span>
-        </div>
-        <div class="flex justify-center items-center px-1 border-r-2 border-gray-300">
-          <span class="text-gray-400">{{ weatherData.wind!!.deg }}° | {{ weatherData.wind!!.speed }} km/h</span>
-        </div>
-        <div class="flex justify-center items-center px-1">
-          <span class="text-gray-400">{{ weatherData.main!!.humidity }}%</span>
+          <div class="flex justify-center items-center px-1 border-r-2 border-gray-300">
+            <span class="text-gray-400">{{ getSunriseTime() }}</span>
+          </div>
+          <div class="flex justify-center items-center px-1 border-r-2 border-gray-300">
+            <span class="text-gray-400">{{ weatherData?.wind?.deg }}° | {{ weatherData?.wind?.speed }} km/h</span>
+          </div>
+          <div class="flex justify-center items-center px-1">
+            <span class="text-gray-400">{{ weatherData?.main?.humidity }}%</span>
+          </div>
         </div>
       </div>
-    </div>
-  </mat-card-content>
-  <mat-card-footer>
-    <span class="text-sm text-gray-500 italic">Weather data comes from openweathermap.</span>
-  </mat-card-footer>
-</mat-card>
+    </mat-card-content>
+    <mat-card-footer class="text-center">
+      <span class="text-sm text-gray-500 italic">Weather data comes from openweathermap.</span>
+    </mat-card-footer>
+  </mat-card>
+</ng-template>
