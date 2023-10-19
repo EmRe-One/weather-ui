@@ -5,15 +5,15 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from "./MaterialModule";
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { PlaceholderComponent } from './components/placeholder/placeholder.component';
+import {ToolbarComponent} from './components/toolbar/toolbar.component';
+import {WeatherCardComponent} from './components/weather-card/weather-card.component';
 import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
-    PlaceholderComponent
+    WeatherCardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlaceholderComponent } from './placeholder.component';
+import { WeatherCardComponent } from './weather-card.component';
 
 describe('PlaceholderComponent', () => {
-  let component: PlaceholderComponent;
-  let fixture: ComponentFixture<PlaceholderComponent>;
+  let component: WeatherCardComponent;
+  let fixture: ComponentFixture<WeatherCardComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PlaceholderComponent]
+      declarations: [WeatherCardComponent]
     });
-    fixture = TestBed.createComponent(PlaceholderComponent);
+    fixture = TestBed.createComponent(WeatherCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
