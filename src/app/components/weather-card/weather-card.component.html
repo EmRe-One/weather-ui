@@ -1,6 +1,9 @@
 <mat-progress-spinner *ngIf="isLoading; else weatherCardTemplate"></mat-progress-spinner>
 
 <ng-template #weatherCardTemplate>
+  <!-- TODO: create input field for the city name -->
+  <button (click)="updateCity('Pune')">Get Pune Weather</button>
+
   <mat-card class="p-4 !rounded-3xl">
     <mat-card-header class="flex justify-center">
       <mat-card-title class="text-center">

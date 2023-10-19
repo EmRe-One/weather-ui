@@ -18,7 +18,8 @@ export class WeatherCardComponent {
     this.updateCity('Berlin');
   }
 
-  private updateCity(city: string) {
+  updateCity(city: string) {
+    this.isLoading = true;
     this.weatherService.getWeatherData(city).subscribe((result) => {
       if (result) {
         this.weatherData = result;
